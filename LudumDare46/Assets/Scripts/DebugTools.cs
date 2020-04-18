@@ -10,6 +10,7 @@ public class DebugTools : MonoBehaviour
     void Start()
     {
         cv = GetComponent<Canvas>();
+        cv.enabled = false;
     }
 
     // Update is called once per frame
