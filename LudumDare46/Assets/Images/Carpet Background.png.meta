@@ -1,34 +1,19 @@
 fileFormatVersion: 2
-guid: b8cd40c4caa655346b1cd65d1078b408
+guid: d57252ed553300a4ebf4131b1d5e3fda
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -436098664747491490
-    second: 9_Wall_Tiles_0
+      213: 3663859993532935256
+    second: Carpet Background_0
   - first:
-      213: 6917565910904019296
-    second: 9_Wall_Tiles_1
+      213: 7736225136703393219
+    second: Carpet Background_1
   - first:
-      213: -4643830463587890758
-    second: 9_Wall_Tiles_2
+      213: -8501533360855983204
+    second: Carpet Background_2
   - first:
-      213: -1216013281355096068
-    second: 9_Wall_Tiles_3
-  - first:
-      213: 5417672732033256256
-    second: 9_Wall_Tiles_4
-  - first:
-      213: 1777800884436866559
-    second: 9_Wall_Tiles_5
-  - first:
-      213: -5477521606162185830
-    second: 9_Wall_Tiles_6
-  - first:
-      213: -2945320984791801266
-    second: 9_Wall_Tiles_7
-  - first:
-      213: 5550303919690626035
-    second: 9_Wall_Tiles_8
+      213: -3049449485895748050
+    second: Carpet Background_3
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -68,7 +53,7 @@ TextureImporter:
   lightmap: 0
   compressionQuality: 50
   spriteMode: 2
-  spriteExtrude: 1
+  spriteExtrude: 11
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
@@ -126,70 +111,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: 9_Wall_Tiles_0
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 32
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: e5f14b0339aa2f9f0800000000000000
-      internalID: -436098664747491490
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: 9_Wall_Tiles_1
-      rect:
-        serializedVersion: 2
-        x: 16
-        y: 32
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 06919cd8b81200060800000000000000
-      internalID: 6917565910904019296
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: 9_Wall_Tiles_2
-      rect:
-        serializedVersion: 2
-        x: 32
-        y: 32
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: ab9c4b42ccccd8fb0800000000000000
-      internalID: -4643830463587890758
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: 9_Wall_Tiles_3
+      name: Carpet Background_0
       rect:
         serializedVersion: 2
         x: 0
@@ -203,14 +125,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: cff1ca20d5adf1fe0800000000000000
-      internalID: -1216013281355096068
+      spriteID: 85cab4d8045a8d230800000000000000
+      internalID: 3663859993532935256
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: 9_Wall_Tiles_4
+      name: Carpet Background_1
       rect:
         serializedVersion: 2
         x: 16
@@ -224,35 +146,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 04b892e45a07f2b40800000000000000
-      internalID: 5417672732033256256
+      spriteID: 3cd47a706c79c5b60800000000000000
+      internalID: 7736225136703393219
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: 9_Wall_Tiles_5
-      rect:
-        serializedVersion: 2
-        x: 32
-        y: 16
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: ff51c363c740ca810800000000000000
-      internalID: 1777800884436866559
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: 9_Wall_Tiles_6
+      name: Carpet Background_2
       rect:
         serializedVersion: 2
         x: 0
@@ -266,14 +167,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a910d2fce1febf3b0800000000000000
-      internalID: -5477521606162185830
+      spriteID: c9bdb0c837c740a80800000000000000
+      internalID: -8501533360855983204
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: 9_Wall_Tiles_7
+      name: Carpet Background_3
       rect:
         serializedVersion: 2
         x: 16
@@ -287,29 +188,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e422bf75b2e1027d0800000000000000
-      internalID: -2945320984791801266
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: 9_Wall_Tiles_8
-      rect:
-        serializedVersion: 2
-        x: 32
-        y: 0
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 3f33e981204a60d40800000000000000
-      internalID: 5550303919690626035
+      spriteID: e26bfa869dd2ea5d0800000000000000
+      internalID: -3049449485895748050
       vertices: []
       indices: 
       edges: []
