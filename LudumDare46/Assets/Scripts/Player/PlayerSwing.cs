@@ -32,9 +32,6 @@ public class PlayerSwing : MonoBehaviour
             //Hit/Interact
             if (Physics2D.Raycast(transform.position, Vector2.right * direction, filter, hitInfo, swingDistance) != 0)
             {
-                //Find the closest object
-                RaycastHit2D maxHit = hitInfo[0];
-                float minDistance = swingDistance;
                 foreach (RaycastHit2D hit in hitInfo)
                 {
                     Interactable ic = hit.transform.gameObject.GetComponent<Interactable>();
