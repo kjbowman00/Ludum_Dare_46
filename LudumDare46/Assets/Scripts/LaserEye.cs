@@ -8,8 +8,12 @@ public class LaserEye : MonoBehaviour
 	private LineRenderer render;
 	private Physics2D phys = new Physics2D();
 	
-	private Vector3 start;
-	private Vector2 direction;
+	private Vector2 start;
+	private Vector2 currentDirection;
+	private float currentAngle;
+	private float deltaAngle;
+	private float time;
+	private bool activated = false;
 	
     // Start is called before the first frame update
     void Start()
@@ -21,19 +25,40 @@ public class LaserEye : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-		// Vector2 start = new Vector2(0.4f, 2.37f);
-		// Vector2 direction = new Vector2(1f, -1f);
-		
-		Vector2 raycastStart = start;
-		
-		RaycastHit2D hit = Physics2D.Raycast(raycastStart, direction);
-		render.SetPosition(1, hit.point - raycastStart); 
+		if (activated)
+		{
+			// Vector2 start = new Vector2(0.4f, 2.37f);
+			// Vector2 direction = new Vector2(1f, -1f);
+			
+			//RaycastHit2D hit = Physics2D.Raycast(raycastStart, currentDirection);
+			//render.SetPosition(1, hit.point - raycastStart); 
+			
+			time -= Time.deltaTime;
+			RaycastHit2D hit = Physics2D.Raycast(start, currentDirection);
+			render.SetPosition(1, hit.point - start);
+			currentAngle += deltaAngle * Time.deltaTime * 2;
+			currentDirection += new Vector2((float) System.Math.Cos(currentAngle), (float) System.Math.Sin(currentAngle));
+			//Debug.Log(deltaAngle + " " + Time.deltaTime + " " + currentAngle);
+			//Debug.Log(currentDirection);
+				if (time < 0)
+			{
+				activated = false;
+				render.SetPosition(1, start);
+			}
+		}
     }
 	
-	public void setLaserParams(float angle, Vector3 startingPoint)
+	public void setLaserParams(float startAngle, float endAngle, float time, Vector3 start)
 	{
-		angle = angle / (float) System.Math.PI * 180f;
-		direction = new Vector2((float) System.Math.Cos(angle), (float) System.Math.Sin(angle));
-		start = startingPoint;
+		startAngle = startAngle * (float) System.Math.PI / 180f;
+		this.currentDirection = new Vector2((float) System.Math.Cos(startAngle), (float) System.Math.Sin(startAngle));
+		endAngle = endAngle * (float) System.Math.PI / 180f;
+		//endDirection = new Vector2((float) System.Math.Cos(endAngle), (float) System.Math.Sin(endAngle));
+		deltaAngle = (endAngle - startAngle) / time;
+		this.currentAngle = startAngle;
+		this.start = start;
+		this.time = time;
+		Debug.Log(endAngle + " " + startAngle + " " + deltaAngle);
+		activated = true;
 	}
 }
