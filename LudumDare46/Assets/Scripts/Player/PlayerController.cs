@@ -65,6 +65,7 @@ public class PlayerController : MonoBehaviour
 		if (collision.gameObject.tag == "milk")
 		{
 			speed = speed / 5;
+			jumpForce = jumpForce / 8;
 		}
 	}
 	
@@ -81,6 +82,7 @@ public class PlayerController : MonoBehaviour
 		if (collision.gameObject.tag == "milk")
 		{
 			speed = speed * 5;
+			jumpForce = jumpForce * 8;
 		}
 	}
 	
