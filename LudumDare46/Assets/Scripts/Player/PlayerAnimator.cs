@@ -4,11 +4,14 @@ using UnityEngine;
 
 public class PlayerAnimator : MonoBehaviour
 {
+    public float threshold;
     Animator animator;
     SpriteRenderer sr;
+    Rigidbody2D rb;
     // Start is called before the first frame update
     void Start()
     {
+        rb = GetComponentInParent<Rigidbody2D>();
         animator = GetComponent<Animator>();
         sr = GetComponent<SpriteRenderer>();
     }
@@ -16,20 +19,20 @@ public class PlayerAnimator : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        float axis = Input.GetAxis("Horizontal");
-        if (axis == 0)
-        {
-            animator.SetBool("Moving", false);
-        }
-        else if (axis > 0)
+        float xVel = rb.velocity.x;
+        if (xVel > threshold)
         {
             animator.SetBool("Moving", true);
             sr.flipX = false;
         }
-        else if (axis < 0)
+        else if (xVel < -threshold)
         {
             animator.SetBool("Moving", true);
             sr.flipX = true;
+        }
+        else
+        {
+            animator.SetBool("Moving", false);
         }
     }
 }
