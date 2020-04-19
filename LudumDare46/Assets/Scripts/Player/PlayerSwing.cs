@@ -26,6 +26,9 @@ public class PlayerSwing : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        float axis = Input.GetAxis("Horizontal");
+        if (axis > 0) direction = 1;
+        if (axis < 0) direction = -1;
         if (hitTimeHave >= hitTimeNeeded && Input.GetKeyDown(KeyCode.E))
         {
             hitTimeHave = 0;
