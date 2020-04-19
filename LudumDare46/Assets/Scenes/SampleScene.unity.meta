@@ -1,5 +1,13 @@
 fileFormatVersion: 2
+<<<<<<< HEAD
 guid: 2cda990e2423bbf4892e6590ba056729
+=======
+<<<<<<<< HEAD:LudumDare46/Assets/Scenes/SampleScene.unity.meta
+guid: c7cb9afcc09312f40ac2b4a94d9a7333
+========
+guid: 4ac9db97fc33c0646b6ddbe2222e6d08
+>>>>>>>> 49c37dc979d38d38baadc2c8bad5ce76bdd07381:LudumDare46/Assets/Scenes/SampleScene2.unity.meta
+>>>>>>> 49c37dc979d38d38baadc2c8bad5ce76bdd07381
 DefaultImporter:
   externalObjects: {}
   userData: 
