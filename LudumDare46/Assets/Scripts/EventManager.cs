@@ -25,7 +25,6 @@ public class EventManager : MonoBehaviour
         
     }
 
-
 	public static void getHit()
 	{
 		Debug.Log("Got hit... Loser.");
