@@ -51,7 +51,7 @@ public class Pump : Interactable
         }
     }
 
-    public override Item interact()
+    public override Item interact(Item playerItem)
     {
         if (!pumpOn)
         {

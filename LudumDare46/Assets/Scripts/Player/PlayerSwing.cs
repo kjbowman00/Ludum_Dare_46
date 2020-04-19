@@ -41,7 +41,7 @@ public class PlayerSwing : MonoBehaviour
                     if (ic != null)
                     {
                         //Interact with the object and get the item from it
-                        Item item = ic.interact();
+                        Item item = ic.interact(currentItem);
                         if (item != Item.None) currentItem = item;
                     }
                 }

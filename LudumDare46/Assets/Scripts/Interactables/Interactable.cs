@@ -16,7 +16,7 @@ public class Interactable : MonoBehaviour
         
     }
 
-    public virtual Item interact()
+    public virtual Item interact(Item playerItemHeld)
     {
         return Item.None;
     }

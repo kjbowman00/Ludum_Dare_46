@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Pipe : MonoBehaviour
+public class Pipe : Interactable
 {
     private bool bursted;
     // Start is called before the first frame update
@@ -24,13 +24,22 @@ public class Pipe : MonoBehaviour
         GetComponent<SpriteRenderer>().color = Color.red;
     }
 
-    public void fixPipe()
+    private void fixPipe()
     {
-
+        bursted = false;
     }
 
     public bool isBurst()
     {
         return bursted;
+    }
+
+    public override Item interact(Item playerItem)
+    {
+        if (playerItem == Item.Tools)
+        {
+            fixPipe();
+        }
+        return Item.None;
     }
 }
