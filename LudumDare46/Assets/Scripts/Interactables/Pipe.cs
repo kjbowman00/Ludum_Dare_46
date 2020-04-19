@@ -27,6 +27,7 @@ public class Pipe : Interactable
     private void fixPipe()
     {
         bursted = false;
+        GetComponent<SpriteRenderer>().color = Color.white;
     }
 
     public bool isBurst()
@@ -36,6 +37,7 @@ public class Pipe : Interactable
 
     public override Item interact(Item playerItem)
     {
+        Debug.Log("Pipe interaction");
         if (playerItem == Item.Tools)
         {
             fixPipe();
