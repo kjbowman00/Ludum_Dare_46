@@ -6,6 +6,9 @@ public class EventManager : MonoBehaviour
 {
     public delegate void _PipeBurst();
     public static event _PipeBurst PipeBurst;
+	
+	public delegate void _LaserFire(float angle, Vector3 startingPoint);
+	public static event _LaserFire LaserFire;
 
     // Start is called before the first frame update
     void Start()
@@ -31,6 +34,10 @@ public class EventManager : MonoBehaviour
                 Debug.Log("PipeBurst event activated");
                 PipeBurst();
                 break;
+			case "Laser Baby":
+				Debug.Log("Laser has been fired");
+				LaserFire(-45, Vector3.zero);
+				break;
             default:
                 Debug.Log("Unkown Button Name: " + name);
                 break;
