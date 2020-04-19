@@ -60,11 +60,27 @@ public class PlayerController : MonoBehaviour
 		}
 	}
 	
+	void OnTriggerEnter2D(Collider2D collision)
+	{
+		if (collision.gameObject.tag == "milk")
+		{
+			speed = speed / 5;
+		}
+	}
+	
 	void OnCollisionExit2D(Collision2D collision)
 	{
 		if (collision.gameObject.tag == "floor")
 		{
 			isGrounded = false;
+		}
+	}
+	
+	void OnTriggerExit2D(Collider2D collision)
+	{
+		if (collision.gameObject.tag == "milk")
+		{
+			speed = speed * 5;
 		}
 	}
 	
