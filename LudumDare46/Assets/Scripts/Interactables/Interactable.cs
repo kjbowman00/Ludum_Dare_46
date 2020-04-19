@@ -16,8 +16,8 @@ public class Interactable : MonoBehaviour
         
     }
 
-    public virtual int interact()
+    public virtual Item interact()
     {
-        return 0;
+        return Item.None;
     }
 }

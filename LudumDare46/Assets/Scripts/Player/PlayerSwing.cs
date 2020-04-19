@@ -7,7 +7,7 @@ public class PlayerSwing : MonoBehaviour
     public float swingDistance;
     public float hitTimeNeeded;
     private float hitTimeHave;
-    private int currentItem;
+    private Item currentItem;
     private int direction; // 1 for right -1 for left
 
     private ContactFilter2D filter;
@@ -19,7 +19,7 @@ public class PlayerSwing : MonoBehaviour
         hitInfo = new List<RaycastHit2D>();
         filter = new ContactFilter2D();
         filter.NoFilter();
-        currentItem = 0;
+        currentItem = Item.None;
         hitTimeHave = hitTimeNeeded;
     }
 
@@ -41,8 +41,8 @@ public class PlayerSwing : MonoBehaviour
                     if (ic != null)
                     {
                         //Interact with the object and get the item from it
-                        int item = ic.interact();
-                        if (item != 0) currentItem = item;
+                        Item item = ic.interact();
+                        if (item != Item.None) currentItem = item;
                     }
                 }
             }

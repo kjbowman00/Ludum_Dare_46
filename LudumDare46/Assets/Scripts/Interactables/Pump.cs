@@ -51,13 +51,13 @@ public class Pump : Interactable
         }
     }
 
-    public override int interact()
+    public override Item interact()
     {
         if (!pumpOn)
         {
             pumpFixPassed++;
         }
 
-        return 0;
+        return Item.None;
     }
 }
