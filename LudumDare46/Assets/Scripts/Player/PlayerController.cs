@@ -6,10 +6,12 @@ public class PlayerController : MonoBehaviour
 {
     public float speed;
     public float jumpForce;
+	public float hitStun;
 
     private Rigidbody2D rb;
 	
 	private bool isGrounded = true;
+	private bool canMove = true;
 	private float jumpTime = 0;
 
     // Start is called before the first frame update
@@ -17,21 +19,37 @@ public class PlayerController : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
     }
+	
+	void OnEnable()
+	{
+		EventManager.GetHit += getHit;
+	}
+	
+	void OnDisable()
+	{
+		EventManager.GetHit -= getHit;
+	}
 
     // Update is called once per frame
     void Update()
     {
-        float xVel = Input.GetAxis("Horizontal") * speed;
-        rb.velocity = new Vector2(xVel, rb.velocity.y);
-        //transform.Translate(Vector3.right * Time.deltaTime * speed * Input.GetAxis("Horizontal"));
-		
-		jumpTime += Time.deltaTime;		
-		if (Input.GetKey("w") && isGrounded && jumpTime >= .34)
+		if (canMove)
 		{
-			rb.velocity = new Vector2(xVel, jumpForce);
-			jumpTime = 0;
+			float xVel = Input.GetAxis("Horizontal") * speed;
+			rb.velocity = new Vector2(xVel, rb.velocity.y);
+			//transform.Translate(Vector3.right * Time.deltaTime * speed * Input.GetAxis("Horizontal"));
+			
+			jumpTime += Time.deltaTime;		
+			if (Input.GetKey("w") && isGrounded && jumpTime >= .34)
+			{
+				rb.velocity = new Vector2(xVel, jumpForce);
+				jumpTime = 0;
+			}	
 		}
-		
+		else if (isGrounded)
+		{
+			canMove = true;
+		}
     }
 	
 	void OnCollisionEnter2D(Collision2D collision)
@@ -50,4 +68,13 @@ public class PlayerController : MonoBehaviour
 		}
 	}
 	
+	void getHit()
+	{
+		if (canMove)
+		{
+			rb.velocity = new Vector2(((float) Random.value - 0.5f) * 5f, jumpForce);
+			isGrounded = false;
+			canMove = false;
+		}
+	}
 }
