@@ -5,8 +5,6 @@ using UnityEngine;
 public class LaserManager : MonoBehaviour
 {
 	
-	public LaserEye[] laserEyes;
-	
     // Start is called before the first frame update
     void Start()
     {
@@ -15,13 +13,12 @@ public class LaserManager : MonoBehaviour
 	
 	void OnEnable()
 	{
-		laserEyes = GetComponentsInChildren<LaserEye>();
-		EventManager.LaserFire += laserEyes[0].setLaserParams;
+		EventManager.LaserFire += laserFire;
 	}
 	
 	void OnDisable()
 	{
-		EventManager.LaserFire -= laserEyes[0].setLaserParams;
+		EventManager.LaserFire -= laserFire;
 	}
 
     // Update is called once per frame
@@ -29,4 +26,11 @@ public class LaserManager : MonoBehaviour
     {
         
     }
+	
+	public void laserFire(float startAngle, float endAngle, float time, Vector3 startingPoint)
+	{
+		var laser = Resources.Load<Object>("Laser") as GameObject;
+		var createdLaser = Object.Instantiate(laser, Vector3.zero, Quaternion.identity);
+		createdLaser.GetComponent<LaserEye>().setLaserParams(startAngle, endAngle, time, startingPoint);
+	}
 }

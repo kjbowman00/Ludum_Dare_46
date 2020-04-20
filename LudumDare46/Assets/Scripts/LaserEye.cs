@@ -27,10 +27,12 @@ public class LaserEye : MonoBehaviour
     {
 		if (activated)
 		{
+			gameObject.GetComponent<Renderer>().enabled = true;
+			
 			// Moves the laser deltaAngle towards target angle every tick
 			time -= Time.deltaTime;
 			RaycastHit2D hit = Physics2D.Raycast(start, currentDirection);
-			render.SetPosition(1, hit.point - start);
+			render.SetPosition(1, hit.point);
 			currentAngle += deltaAngle * Time.deltaTime * 2;
 			currentDirection += new Vector2((float) System.Math.Cos(currentAngle), (float) System.Math.Sin(currentAngle));
 			
@@ -43,8 +45,10 @@ public class LaserEye : MonoBehaviour
 			// Disables the laser once it has done a full sweep
 			if (time < 0)
 			{
-				activated = false;
-				render.SetPosition(1, start);
+				//gameObject.GetComponent<Renderer>().enabled = false;
+				//activated = false;
+				//render.SetPosition(1, start);
+				Destroy(gameObject);
 			}
 		}
     }

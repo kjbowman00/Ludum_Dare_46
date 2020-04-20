@@ -60,7 +60,11 @@ public class EventManager : MonoBehaviour
                         break;
                     case 1:
                         Debug.Log("Laser has been fired");
-                        LaserFire(0f, -90f, 5f, Vector3.zero);
+                        float leftOrRight = Random.Range(0f, 1f);
+						if (leftOrRight < 0.5f)
+							LaserFire(10f, -75f, 2.5f, new Vector3(0.27f, 0.96f, 0f));
+						else
+							LaserFire(-190f, -115f, 2.5f, new Vector3(-0.3f, 0.96f, -0f));
                         break;
                     case 2:
                         Debug.Log("Milk Spilt");
@@ -85,8 +89,11 @@ public class EventManager : MonoBehaviour
 
 	public static void placeMop()
 	{
-		Debug.Log("Replaced mop");
-		//PlaceMop();
+		if (PlaceMop != null)
+		{
+			Debug.Log("Replaced mop");
+			PlaceMop();
+		}
 	}
 	
 	public static void placeToolbox()

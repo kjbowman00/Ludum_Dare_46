@@ -66,6 +66,8 @@ public class PlayerSwing : MonoBehaviour
             //Throw item
             currentItem = Item.None;
             updateToolRender();
+			EventManager.placeToolbox();
+			EventManager.placeMop();
         }
     }
 	
