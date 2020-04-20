@@ -44,7 +44,8 @@ public class PlayerController : MonoBehaviour
 			jumpTime += Time.deltaTime;		
 			if (Input.GetKey("w") && isGrounded && jumpTime >= .34)
 			{
-				rb.velocity = new Vector2(xVel, jumpForce);
+				if (milkCounter > 0) { rb.velocity = new Vector2(xVel, jumpForce / 8); }
+				else { rb.velocity = new Vector2(xVel, jumpForce); }
 				jumpTime = 0;
 			}	
 		}
@@ -67,7 +68,6 @@ public class PlayerController : MonoBehaviour
 		if (collision.gameObject.tag == "milk")
 		{
 			milkCounter++;
-			jumpForce = jumpForce / 8;
 		}
 	}
 	
@@ -84,7 +84,6 @@ public class PlayerController : MonoBehaviour
 		if (collision.gameObject.tag == "milk")
 		{
 			milkCounter--;
-			jumpForce = jumpForce * 8;
 		}
 	}
 	
@@ -92,7 +91,8 @@ public class PlayerController : MonoBehaviour
 	{
 		if (canMove)
 		{
-			rb.velocity = new Vector2(((float) Random.value - 0.5f) * 5f, jumpForce);
+			if (milkCounter > 0) { rb.velocity = new Vector2(((float) Random.value - 0.5f) * 5f, jumpForce / 8); }
+			else { rb.velocity = new Vector2(((float) Random.value - 0.5f) * 5f, jumpForce); }
 			isGrounded = false;
 			canMove = false;
 		}

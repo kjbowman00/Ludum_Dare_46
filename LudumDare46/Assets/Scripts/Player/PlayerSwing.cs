@@ -39,7 +39,7 @@ public class PlayerSwing : MonoBehaviour
         if (axis > 0) direction = 1;
         if (axis < 0) direction = -1;
         updateToolRender();
-        if (hitTimeHave >= hitTimeNeeded && Input.GetKeyDown(KeyCode.E))
+        if (hitTimeHave >= hitTimeNeeded && Input.GetKey(KeyCode.E))
         {
             if (this.currentItem != Item.None) StartCoroutine(swingTool());
             hitTimeHave = 0;

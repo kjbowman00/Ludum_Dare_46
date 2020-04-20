@@ -22,7 +22,7 @@ public class BigBaby : MonoBehaviour
 	
     public void milkTime()
     {
-        float location = Random.Range(-7.5f, 7.5f);
+        float location = Random.Range(-6.35f, 7.5f);
         spawnMilk(location, -4.2f);
     }
 
