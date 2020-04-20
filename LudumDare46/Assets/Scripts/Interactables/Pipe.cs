@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Pipe : Interactable
 {
+    private AudioSource hammerSound;
     public Pump myRelevantPump;
     private Animator myAnimator;
     private ParticleSystem myParticleSystem;
@@ -12,6 +13,7 @@ public class Pipe : Interactable
     // Start is called before the first frame update
     void Start()
     {
+        hammerSound = GetComponent<AudioSource>();
         myAnimator = GetComponent<Animator>();
         myParticleSystem = GetComponent<ParticleSystem>();
         pipeManager = GetComponentInParent<PipeManager>();
@@ -53,6 +55,7 @@ public class Pipe : Interactable
 			{
 				EventManager.placeToolbox();
 				fixPipe();
+                hammerSound.Play();
 				return Item.Current;
 			}
 		}

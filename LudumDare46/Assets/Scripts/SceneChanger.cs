@@ -43,10 +43,10 @@ public class SceneChanger : MonoBehaviour
         scenesLoading.Clear();
     }
 
-    public void toMenu()
+    public void toMenu(int sceneNum)
     {
         loadingScreen.SetActive(true);
-        scenesLoading.Add(SceneManager.UnloadSceneAsync(SceneManager.GetActiveScene()));
+        scenesLoading.Add(SceneManager.UnloadSceneAsync(sceneNum));
         scenesLoading.Add(SceneManager.LoadSceneAsync(1, LoadSceneMode.Additive));
 
         StartCoroutine(GetSceneLoadProgress());
@@ -63,7 +63,7 @@ public class SceneChanger : MonoBehaviour
 
     private IEnumerator winGameWait()
     {
-        yield return new WaitForSeconds(1);
+        yield return new WaitForSeconds(0.2f);
 
         blackScreen.SetActive(false);
     }

@@ -23,7 +23,7 @@ public class BossWin : MonoBehaviour
         if (timer >= endTime)
         {
             myAudio.pitch = 1f;
-            SceneChanger.instance.toMenu();
+            SceneChanger.instance.toMenu(4);
         }
     }
 }

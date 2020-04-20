@@ -84,7 +84,7 @@ public class BossLose : MonoBehaviour
                     {
                         begin = false;
                         done = true;
-                        SceneChanger.instance.toMenu();
+                        SceneChanger.instance.toMenu(3);
                     }
                     break;
             }

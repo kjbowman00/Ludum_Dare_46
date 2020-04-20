@@ -22,16 +22,21 @@ public class GameEndManager : MonoBehaviour
         if (timePassed > TOTAL_TIME_NEEDED)
         {
             //WIN!!!
+            winGame();
         }
     }
 
     //Lose the game
     public void outOfHealth()
     {
-        //Flash black screen
-        //Scene with everything but you can't move
-        //Just an animation at that poitn
-        //Boss comes in and smashes you from anger
+        MusicTime.instance.stopMusic();
+        SceneChanger.instance.loseGame();
+    }
+
+    public void winGame()
+    {
+        MusicTime.instance.stopMusic();
+        SceneChanger.instance.winGame();
     }
 
     public float getPercentageTime()
