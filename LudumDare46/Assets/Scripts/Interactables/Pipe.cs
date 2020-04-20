@@ -4,11 +4,12 @@ using UnityEngine;
 
 public class Pipe : Interactable
 {
+    private PipeManager pipeManager;
     private bool bursted;
     // Start is called before the first frame update
     void Start()
     {
-        
+        pipeManager = GetComponentInParent<PipeManager>();
     }
 
     // Update is called once per frame
@@ -27,6 +28,7 @@ public class Pipe : Interactable
     private void fixPipe()
     {
         bursted = false;
+        pipeManager.repairedPipe();
         GetComponent<SpriteRenderer>().color = Color.white;
     }
 

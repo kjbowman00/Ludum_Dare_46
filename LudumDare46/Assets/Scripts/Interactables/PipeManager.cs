@@ -9,17 +9,12 @@ public class PipeManager : MonoBehaviour
     public float MILK_FLOW_PER_PUMP;
     public float brokenPipeLeakAmount;
 
-    private List<Pipe> nonBurstedPipes;
+    private int numBurstedPipes = 0;
     private Pipe[] pipes;
 
     void Start()
     {
-        nonBurstedPipes = new List<Pipe>();
         pipes = GetComponentsInChildren<Pipe>();
-        for (int i = 0; i < pipes.Length; i++)
-        {
-            nonBurstedPipes.Add(pipes[i]);
-        }
     }
 
     void OnEnable()
@@ -38,6 +33,12 @@ public class PipeManager : MonoBehaviour
         int pipeNum = selectPipe();
         //Call its burst method
         pipes[pipeNum].burst();
+        numBurstedPipes++;
+    }
+
+    public void repairedPipe()
+    {
+        numBurstedPipes--;
     }
 
     private int selectPipe()
@@ -57,10 +58,8 @@ public class PipeManager : MonoBehaviour
         numPumps += pump1.pumpStatus();
         //numPumps += pump2.pumpStatus();
         float milk = MILK_FLOW_PER_PUMP * numPumps;
-        int numBurstPipes = pipes.Length - nonBurstedPipes.Count;
-        milk -= numBurstPipes * brokenPipeLeakAmount;
+        milk -= numBurstedPipes * brokenPipeLeakAmount;
         if (milk < 0) milk = 0;
-        Debug.Log("milk" + milk);
         return milk;
     }
 }
