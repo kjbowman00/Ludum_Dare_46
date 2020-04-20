@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class Pump : Interactable
 {
-    private AudioSource audio;
+    public Pipe myPipe;
+    private AudioSource myAudio;
     private Animator animator;
     public float pumpDuration;
     public float randomness;
@@ -15,7 +16,7 @@ public class Pump : Interactable
     // Start is called before the first frame update
     void Start()
     {
-        audio = GetComponent<AudioSource>();
+        myAudio = GetComponent<AudioSource>();
         animator = GetComponent<Animator>();
         pumpOn = true;
         timePassed = 0;
@@ -37,6 +38,7 @@ public class Pump : Interactable
                 timeNeeded = pumpDuration + Random.Range(0, randomness);
                 pumpOn = false;
                 animator.SetBool("PumpOn", false);
+                myPipe.pumpChange(false);
             }
         } 
     }
@@ -47,6 +49,7 @@ public class Pump : Interactable
         {
             pumpOn = true;
             animator.SetBool("PumpOn", true);
+            myPipe.pumpChange(true);
         }
 
         return Item.Current;
@@ -60,6 +63,6 @@ public class Pump : Interactable
 
     public void playSound()
     {
-        audio.Play();
+        myAudio.Play();
     }
 }

@@ -4,13 +4,16 @@ using UnityEngine;
 
 public class Pipe : Interactable
 {
-    private ParticleSystem particleSystem;
+    public Pump myRelevantPump;
+    private Animator myAnimator;
+    private ParticleSystem myParticleSystem;
     private PipeManager pipeManager;
     private bool bursted;
     // Start is called before the first frame update
     void Start()
     {
-        particleSystem = GetComponent<ParticleSystem>();
+        myAnimator = GetComponent<Animator>();
+        myParticleSystem = GetComponent<ParticleSystem>();
         pipeManager = GetComponentInParent<PipeManager>();
     }
 
@@ -22,16 +25,19 @@ public class Pipe : Interactable
 
     public void burst()
     {
-        //Turn red right now to show that it's bursted
+        if (myRelevantPump.pumpStatus() == 1)
+        {
+            //Pump is on, animate
+            myParticleSystem.Play();
+        }
         bursted = true;
-        particleSystem.Play();
     }
 
     private void fixPipe()
     {
         bursted = false;
         pipeManager.repairedPipe();
-        particleSystem.Stop();
+        myParticleSystem.Stop();
     }
 
     public bool isBurst()
@@ -51,5 +57,19 @@ public class Pipe : Interactable
 			}
 		}
 		return Item.Current;
+    }
+
+    public void pumpChange(bool on)
+    {
+        if (on)
+        {
+            myAnimator.SetBool("PumpOn", true);
+            if (bursted) myParticleSystem.Play();
+        }
+        else
+        {
+            myAnimator.SetBool("PumpOn", false);
+            myParticleSystem.Stop();
+        }
     }
 }
