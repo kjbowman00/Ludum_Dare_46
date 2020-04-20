@@ -4,6 +4,13 @@ using UnityEngine;
 
 public class EventManager : MonoBehaviour
 {
+    public GameEndManager clock;
+    private float[] probs;
+    private float[] initialProbs;
+    private float[] maxProbs;
+
+    private float timeCounter;
+
     public delegate void _PipeBurst();
     public static event _PipeBurst PipeBurst;
 	
@@ -13,16 +20,60 @@ public class EventManager : MonoBehaviour
 	public delegate void _GetHit();
 	public static event _GetHit GetHit;
 
+    public delegate void _SpawnMilk();
+    public static event _SpawnMilk SpawnMilk;
     // Start is called before the first frame update
     void Start()
     {
-        
+        probs = new float[3];
+        probs[0] = getProb(4); //Pipe Burst
+        probs[1] = getProb(1); //Laser eyes
+        probs[2] = getProb(1); //Milk spurt
+        initialProbs = new float[3];
+        probs.CopyTo(initialProbs, 0);
+        maxProbs = new float[3];
+        maxProbs[0] = getProb(10);
+        maxProbs[1] = getProb(3);
+        maxProbs[2] = getProb(8);
     }
 
-    // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
-        
+        for (int i = 0; i < probs.Length; i++)
+        {
+            float r = Random.Range(0f, 1f);
+            if (r < probs[i])
+            {
+                //Make event happen
+                switch(i)
+                {
+                    case 0:
+                        Debug.Log("Pipe Burst");
+                        PipeBurst();
+                        break;
+                    case 1:
+                        Debug.Log("Laser has been fired");
+                        LaserFire(0f, -90f, 5f, Vector3.zero);
+                        break;
+                    case 2:
+                        Debug.Log("Milk Spilt");
+                        break;
+                    default:
+                        break;
+                }
+            }
+        }
+
+        timeCounter += Time.fixedDeltaTime;
+        if (timeCounter > 5)
+        {
+            float percentage = clock.getPercentageTime();
+            for (int i = 0; i < probs.Length; i++)
+            {
+                probs[i] = percentage * (maxProbs[i] - initialProbs[i]) + initialProbs[i];
+            }
+        }
+
     }
 
 	public static void getHit()
@@ -53,4 +104,10 @@ public class EventManager : MonoBehaviour
                 break;
         }
     }
+
+    private float getProb(float times)
+    {
+        return (times/60f) * Time.fixedDeltaTime;
+    }
+
 }

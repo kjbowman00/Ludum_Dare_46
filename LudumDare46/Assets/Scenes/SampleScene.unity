@@ -934,6 +934,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 43268fd17efacda458d8714409ae022a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  clock: {fileID: 123463039}
 --- !u!4 &83747746
 Transform:
   m_ObjectHideFlags: 0

@@ -4,9 +4,14 @@ using UnityEngine;
 
 public class BigBaby : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    void OnEnable()
     {
+        EventManager.SpawnMilk += milkTime;
+    }
+
+    private void OnDisable()
+    {
+        EventManager.SpawnMilk -= milkTime;
     }
 
     // Update is called once per frame
@@ -15,6 +20,12 @@ public class BigBaby : MonoBehaviour
         
     }
 	
+    public void milkTime()
+    {
+        float location = Random.Range(-4, 4);
+        spawnMilk(location, -3.4f);
+    }
+
 	void spawnMilk(float x, float y)
 	{
 		var milk = Resources.Load<Object>("Milk Spill") as GameObject;

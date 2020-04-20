@@ -29,4 +29,9 @@ public class GameEndManager : MonoBehaviour
     public void outOfHealth()
     {
     }
+
+    public float getPercentageTime()
+    {
+        return timePassed / TOTAL_TIME_NEEDED;
+    }
 }
