@@ -68,6 +68,7 @@ public class EventManager : MonoBehaviour
                         break;
                     case 2:
                         Debug.Log("Milk Spilt");
+						SpawnMilk();
                         break;
                     default:
                         break;
@@ -124,6 +125,10 @@ public class EventManager : MonoBehaviour
 			case "Get Hit":
 				Debug.Log("Get hit nerd");
 				GetHit();
+				break;
+			case "Spawn Milk":
+				Debug.Log("Spawned milk");
+				SpawnMilk();
 				break;
             default:
                 Debug.Log("Unkown Button Name: " + name);

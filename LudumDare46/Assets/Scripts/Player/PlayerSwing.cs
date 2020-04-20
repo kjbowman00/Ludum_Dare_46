@@ -104,9 +104,11 @@ public class PlayerSwing : MonoBehaviour
 					break;
 				case Item.Tools:
 					toolRenderer.sprite = toolSprites[0];
+					toolRenderer.size = new Vector2(0.25f, 0.25f);;
 					break;
 				case Item.Mop:
 					toolRenderer.sprite = toolSprites[1];
+					toolRenderer.size = new Vector2(0.75f, 0.75f);
 					break;
 				case Item.Current:
 					break;

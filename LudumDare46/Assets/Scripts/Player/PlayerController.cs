@@ -12,6 +12,7 @@ public class PlayerController : MonoBehaviour
 	
 	private bool isGrounded = true;
 	private bool canMove = true;
+	private int milkCounter = 0;
 	private float jumpTime = 0;
 
     // Start is called before the first frame update
@@ -36,6 +37,7 @@ public class PlayerController : MonoBehaviour
 		if (canMove)
 		{
 			float xVel = Input.GetAxis("Horizontal") * speed;
+			if (milkCounter > 0) { xVel = xVel / 5; }
 			rb.velocity = new Vector2(xVel, rb.velocity.y);
 			//transform.Translate(Vector3.right * Time.deltaTime * speed * Input.GetAxis("Horizontal"));
 			
@@ -64,7 +66,7 @@ public class PlayerController : MonoBehaviour
 	{
 		if (collision.gameObject.tag == "milk")
 		{
-			speed = speed / 5;
+			milkCounter++;
 			jumpForce = jumpForce / 8;
 		}
 	}
@@ -81,7 +83,7 @@ public class PlayerController : MonoBehaviour
 	{
 		if (collision.gameObject.tag == "milk")
 		{
-			speed = speed * 5;
+			milkCounter--;
 			jumpForce = jumpForce * 8;
 		}
 	}

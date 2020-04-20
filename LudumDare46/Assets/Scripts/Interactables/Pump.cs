@@ -49,7 +49,7 @@ public class Pump : Interactable
             animator.SetBool("PumpOn", true);
         }
 
-        return Item.None;
+        return Item.Current;
     }
 
     //Return 1 if running, 0 if not

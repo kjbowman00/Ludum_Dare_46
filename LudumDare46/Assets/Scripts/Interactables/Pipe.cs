@@ -47,8 +47,8 @@ public class Pipe : Interactable
 			{
 				EventManager.placeToolbox();
 				fixPipe();
+				return Item.Current;
 			}
-			return Item.None;
 		}
 		return Item.Current;
     }

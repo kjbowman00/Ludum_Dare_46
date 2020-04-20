@@ -34,6 +34,6 @@ public class MilkSpill : Interactable
 			EventManager.placeMop();
             cleanMilk();
         }
-        return Item.None;
+        return Item.Current;
     }
 }
