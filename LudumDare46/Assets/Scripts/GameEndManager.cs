@@ -24,4 +24,10 @@ public class GameEndManager : MonoBehaviour
             //WIN!!!
         }
     }
+
+    //Lose the game
+    public void outOfHealth()
+    {
+
+    }
 }

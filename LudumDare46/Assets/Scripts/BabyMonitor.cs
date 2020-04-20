@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class BabyMonitor : MonoBehaviour
 {
+    public GameObject gameEndManager;
+    public PipeManager pipeManager;
     public float milkDrinkRate;
     public float healthDrainRate;
 
@@ -20,7 +22,7 @@ public class BabyMonitor : MonoBehaviour
     void Start()
     {
         health = MAX_HEALTH;
-        milk = MAX_MILK /2;
+        milk = MAX_MILK;
         maxScale = healthBar.transform.localScale.y;
     }
 
@@ -28,10 +30,11 @@ public class BabyMonitor : MonoBehaviour
     void Update()
     {
         milk -= Time.deltaTime * milkDrinkRate;
+        milk += pipeManager.getMilkFlow() * Time.deltaTime;
         milk = Mathf.Clamp(milk, 0, MAX_MILK);
         if (milk <= 0) health -= Time.deltaTime * healthDrainRate;
-        health = Mathf.Clamp(health, 0, MAX_HEALTH);
         updateGraphics();
+        if (health <= 0) gameEndManager.GetComponent<GameEndManager>().outOfHealth();
     }
 
     void updateGraphics()

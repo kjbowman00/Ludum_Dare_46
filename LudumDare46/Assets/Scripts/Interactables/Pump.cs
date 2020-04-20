@@ -60,4 +60,10 @@ public class Pump : Interactable
 
         return Item.None;
     }
+
+    //Return 1 if running, 0 if not
+    public int pumpStatus()
+    {
+        return pumpOn ? 1 : 0;
+    }
 }
