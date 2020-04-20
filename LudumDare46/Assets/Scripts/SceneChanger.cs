@@ -79,7 +79,7 @@ public class SceneChanger : MonoBehaviour
 
     private IEnumerator loseGameWait()
     {
-        yield return new WaitForSeconds(2);
+        yield return new WaitForSeconds(1.2f);
 
         BossLose.begin = true;
         blackScreen.SetActive(false);

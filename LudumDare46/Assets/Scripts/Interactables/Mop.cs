@@ -44,7 +44,6 @@ public class Mop : Interactable
 	
     public override Item interact(Item playerItem)
     {
-        Debug.Log("MOP");
 		EventManager.placeToolbox();
 		pickedUp = true;
         return Item.Mop;

@@ -25,7 +25,7 @@ public class BossLose : MonoBehaviour
         basePos = transform.position;
         bossImage = GetComponent<SpriteRenderer>();
         eventTimes = new float[5];
-        eventTimes[0] = 2;
+        eventTimes[0] = 3;
         eventTimes[1] = 2;
         eventTimes[2] = 0.5f;
         eventTimes[3] = 0.5f;

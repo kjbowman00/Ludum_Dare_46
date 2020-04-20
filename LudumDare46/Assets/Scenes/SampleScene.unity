@@ -1251,8 +1251,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gameEndManager: {fileID: 123463036}
   pipeManager: {fileID: 659831649}
-  milkDrinkRate: 15
-  healthDrainRate: 5
+  milkDrinkRate: 20
+  healthDrainRate: 10
   healthBar: {fileID: 30106907}
   milkBar: {fileID: 896418195}
 --- !u!1 &105139641

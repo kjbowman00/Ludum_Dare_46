@@ -30,6 +30,5 @@ public class BigBaby : MonoBehaviour
 	{
 		var milk = Resources.Load<Object>("Milk Spill") as GameObject;
 		var createdMilk = Object.Instantiate(milk, new Vector3(x, y, 0), Quaternion.identity);
-		Debug.Log("Created " + createdMilk.name + " at " + x + ", " + y + ".");
 	}
 }

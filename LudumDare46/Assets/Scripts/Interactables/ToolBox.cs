@@ -43,7 +43,6 @@ public class ToolBox : Interactable
 	
     public override Item interact(Item playerItem)
     {
-        Debug.Log("TOOLS");
 		EventManager.placeMop();
 		pickedUp = true;
         return Item.Tools;
