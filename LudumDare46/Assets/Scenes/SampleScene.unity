@@ -1514,6 +1514,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c980456d676b0e44b84410454af4fe26, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  babySprites:
+  - {fileID: 1036936086}
+  - {fileID: 1567561604}
+  - {fileID: 310848441}
+  - {fileID: 139107208}
   clockHand: {fileID: 826829451}
   TOTAL_TIME_NEEDED: 210
 --- !u!1 &138621326
