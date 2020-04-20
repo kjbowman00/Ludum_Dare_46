@@ -1,55 +1,55 @@
 fileFormatVersion: 2
-guid: 8ff09166a991bbe45be793a68228aaee
+guid: 961afd340a3166441a49d2f9965215d6
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -1728052350186933306
-    second: pipeReversed_0
+      213: -8467219119453553072
+    second: pipeReversedFix 1_0
   - first:
-      213: -2653835782915623640
-    second: pipeReversed_1
+      213: 8378475129504388777
+    second: pipeReversedFix 1_1
   - first:
-      213: -3937321269083849947
-    second: pipeReversed_2
+      213: -6376961913083962771
+    second: pipeReversedFix 1_2
   - first:
-      213: 3116691371817071640
-    second: pipeReversed_3
+      213: -681597337592736322
+    second: pipeReversedFix 1_3
   - first:
-      213: 4057582261215837936
-    second: pipeReversed_4
+      213: -6953389847926757384
+    second: pipeReversedFix 1_4
   - first:
-      213: 5039256738128886667
-    second: pipeReversed_5
+      213: 1554235889640412556
+    second: pipeReversedFix 1_5
   - first:
-      213: -4807674173367474090
-    second: pipeReversed_6
+      213: -2264475941224879835
+    second: pipeReversedFix 1_6
   - first:
-      213: -1965352127859756593
-    second: pipeReversed_7
+      213: -8200964782709020871
+    second: pipeReversedFix 1_7
   - first:
-      213: 2838728279370580319
-    second: pipeReversed_8
+      213: -592926238026303282
+    second: pipeReversedFix 1_8
   - first:
-      213: 1970376901101537778
-    second: pipeReversed_9
+      213: 1076465063847436497
+    second: pipeReversedFix 1_9
   - first:
-      213: -6545711868685535629
-    second: pipeReversed_10
+      213: -8163195097311168430
+    second: pipeReversedFix 1_10
   - first:
-      213: -6373281917669767198
-    second: pipeReversed_11
+      213: -2543965950489142366
+    second: pipeReversedFix 1_11
   - first:
-      213: -463559151039859587
-    second: pipeReversed_12
+      213: -8466475515744162912
+    second: pipeReversedFix 1_12
   - first:
-      213: -6175741021605755924
-    second: pipeReversed_13
+      213: 491900713996368675
+    second: pipeReversedFix 1_13
   - first:
-      213: -727598794284376991
-    second: pipeReversed_14
+      213: -2698957961033642345
+    second: pipeReversedFix 1_14
   - first:
-      213: 9124449518253857488
-    second: pipeReversed_15
+      213: -3234794860518270644
+    second: pipeReversedFix 1_15
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -147,7 +147,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: pipeReversed_0
+      name: pipeReversedFix 1_0
       rect:
         serializedVersion: 2
         x: 0
@@ -161,14 +161,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6c334d90b89b408e0800000000000000
-      internalID: -1728052350186933306
+      spriteID: 05e339572156e7a80800000000000000
+      internalID: -8467219119453553072
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: pipeReversed_1
+      name: pipeReversedFix 1_1
       rect:
         serializedVersion: 2
         x: 16
@@ -182,14 +182,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 825f7138a6eab2bd0800000000000000
-      internalID: -2653835782915623640
+      spriteID: 9a6dd8d3db2564470800000000000000
+      internalID: 8378475129504388777
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: pipeReversed_2
+      name: pipeReversedFix 1_2
       rect:
         serializedVersion: 2
         x: 32
@@ -203,14 +203,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 52bbaa5aa23db59c0800000000000000
-      internalID: -3937321269083849947
+      spriteID: d6a5f683dea7087a0800000000000000
+      internalID: -6376961913083962771
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: pipeReversed_3
+      name: pipeReversedFix 1_3
       rect:
         serializedVersion: 2
         x: 48
@@ -224,14 +224,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8147eab2a46b04b20800000000000000
-      internalID: 3116691371817071640
+      spriteID: eb5deec25da7a86f0800000000000000
+      internalID: -681597337592736322
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: pipeReversed_4
+      name: pipeReversedFix 1_4
       rect:
         serializedVersion: 2
         x: 0
@@ -245,14 +245,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0fe32be819d6f4830800000000000000
-      internalID: 4057582261215837936
+      spriteID: 8f7a48126c8908f90800000000000000
+      internalID: -6953389847926757384
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: pipeReversed_5
+      name: pipeReversedFix 1_5
       rect:
         serializedVersion: 2
         x: 16
@@ -266,14 +266,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b8b7a20ed490fe540800000000000000
-      internalID: 5039256738128886667
+      spriteID: c851e239e41c19510800000000000000
+      internalID: 1554235889640412556
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: pipeReversed_6
+      name: pipeReversedFix 1_6
       rect:
         serializedVersion: 2
         x: 32
@@ -287,14 +287,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 658ac9cbfc5b74db0800000000000000
-      internalID: -4807674173367474090
+      spriteID: 5296fd01127f290e0800000000000000
+      internalID: -2264475941224879835
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: pipeReversed_7
+      name: pipeReversedFix 1_7
       rect:
         serializedVersion: 2
         x: 48
@@ -308,14 +308,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: fc17c5017aaa9b4e0800000000000000
-      internalID: -1965352127859756593
+      spriteID: 937e32f0bf1503e80800000000000000
+      internalID: -8200964782709020871
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: pipeReversed_8
+      name: pipeReversedFix 1_8
       rect:
         serializedVersion: 2
         x: 0
@@ -329,14 +329,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f514db17450356720800000000000000
-      internalID: 2838728279370580319
+      spriteID: ec8fe6c5ab085c7f0800000000000000
+      internalID: -592926238026303282
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: pipeReversed_9
+      name: pipeReversedFix 1_9
       rect:
         serializedVersion: 2
         x: 16
@@ -350,14 +350,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2f9cacf1a5f285b10800000000000000
-      internalID: 1970376901101537778
+      spriteID: 1d0aebfa54f50fe00800000000000000
+      internalID: 1076465063847436497
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: pipeReversed_10
+      name: pipeReversedFix 1_10
       rect:
         serializedVersion: 2
         x: 32
@@ -371,14 +371,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 376b0f07cb5f825a0800000000000000
-      internalID: -6545711868685535629
+      spriteID: 258be883f4186be80800000000000000
+      internalID: -8163195097311168430
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: pipeReversed_11
+      name: pipeReversedFix 1_11
       rect:
         serializedVersion: 2
         x: 48
@@ -392,14 +392,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2e78fdbecdd8d87a0800000000000000
-      internalID: -6373281917669767198
+      spriteID: 2abd760527402bcd0800000000000000
+      internalID: -2543965950489142366
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: pipeReversed_12
+      name: pipeReversedFix 1_12
       rect:
         serializedVersion: 2
         x: 0
@@ -413,14 +413,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d7433ed786b1199f0800000000000000
-      internalID: -463559151039859587
+      spriteID: 0abe6803069018a80800000000000000
+      internalID: -8466475515744162912
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: pipeReversed_13
+      name: pipeReversedFix 1_13
       rect:
         serializedVersion: 2
         x: 16
@@ -434,14 +434,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ce38166e24c5b4aa0800000000000000
-      internalID: -6175741021605755924
+      spriteID: 32bb38ad71593d600800000000000000
+      internalID: 491900713996368675
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: pipeReversed_14
+      name: pipeReversedFix 1_14
       rect:
         serializedVersion: 2
         x: 32
@@ -455,14 +455,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 16c5da760cc07e5f0800000000000000
-      internalID: -727598794284376991
+      spriteID: 79e80ecb8006b8ad0800000000000000
+      internalID: -2698957961033642345
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: pipeReversed_15
+      name: pipeReversedFix 1_15
       rect:
         serializedVersion: 2
         x: 48
@@ -476,8 +476,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0da51825e7e80ae70800000000000000
-      internalID: 9124449518253857488
+      spriteID: c499c898633bb13d0800000000000000
+      internalID: -3234794860518270644
       vertices: []
       indices: 
       edges: []
