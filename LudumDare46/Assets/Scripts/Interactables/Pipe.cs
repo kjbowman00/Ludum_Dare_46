@@ -41,10 +41,15 @@ public class Pipe : Interactable
 
     public override Item interact(Item playerItem)
     {
-        if (playerItem == Item.Tools)
-        {
-            fixPipe();
-        }
-        return Item.None;
+		if (bursted)
+		{
+			if (playerItem == Item.Tools)
+			{
+				EventManager.placeToolbox();
+				fixPipe();
+			}
+			return Item.None;
+		}
+		return Item.Current;
     }
 }

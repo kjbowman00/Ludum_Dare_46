@@ -42,10 +42,10 @@ public class Mop : Interactable
 		pickedUp = false;
 	}
 	
-	
     public override Item interact(Item playerItem)
     {
         Debug.Log("MOP");
+		EventManager.placeToolbox();
 		pickedUp = true;
         return Item.Mop;
     }

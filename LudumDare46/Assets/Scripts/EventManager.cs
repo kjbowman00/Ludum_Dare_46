@@ -26,6 +26,9 @@ public class EventManager : MonoBehaviour
 	public delegate void _PlaceMop();
 	public static event _PlaceMop PlaceMop;
 	
+	public delegate void _PlaceToolbox();
+	public static event _PlaceToolbox PlaceToolbox;
+	
     // Start is called before the first frame update
     void Start()
     {
@@ -83,7 +86,13 @@ public class EventManager : MonoBehaviour
 	public static void placeMop()
 	{
 		Debug.Log("Replaced mop");
-		PlaceMop();
+		//PlaceMop();
+	}
+	
+	public static void placeToolbox()
+	{
+		Debug.Log("Replaced toolbox");
+		PlaceToolbox();
 	}
 	
 	public static void getHit()
