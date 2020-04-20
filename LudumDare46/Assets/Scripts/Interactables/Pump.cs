@@ -8,9 +8,6 @@ public class Pump : Interactable
     private Animator animator;
     public float pumpDuration;
     public float randomness;
-    public int pumpFixNeeded;
-
-    private int pumpFixPassed;
 
     private bool pumpOn;
     private float timePassed;
@@ -42,23 +39,14 @@ public class Pump : Interactable
                 animator.SetBool("PumpOn", false);
             }
         } 
-        else
-        {
-            if (pumpFixPassed >= pumpFixNeeded)
-            {
-                //Pump is now fixed
-                pumpOn = true;
-                pumpFixPassed = 0;
-                animator.SetBool("PumpOn", true);
-            }
-        }
     }
 
     public override Item interact(Item playerItem)
     {
         if (!pumpOn)
         {
-            pumpFixPassed++;
+            pumpOn = true;
+            animator.SetBool("PumpOn", true);
         }
 
         return Item.None;
