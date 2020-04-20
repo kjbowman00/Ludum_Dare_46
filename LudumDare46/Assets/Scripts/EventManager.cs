@@ -22,6 +22,10 @@ public class EventManager : MonoBehaviour
 
     public delegate void _SpawnMilk();
     public static event _SpawnMilk SpawnMilk;
+	
+	public delegate void _PlaceMop();
+	public static event _PlaceMop PlaceMop;
+	
     // Start is called before the first frame update
     void Start()
     {
@@ -76,6 +80,12 @@ public class EventManager : MonoBehaviour
 
     }
 
+	public static void placeMop()
+	{
+		Debug.Log("Replaced mop");
+		PlaceMop();
+	}
+	
 	public static void getHit()
 	{
 		Debug.Log("Got hit... Loser.");

@@ -18,6 +18,7 @@ public class ToolBox : Interactable
     public override Item interact(Item playerItem)
     {
         Debug.Log("TOOLS");
+		EventManager.placeMop();
         return Item.Tools;
     }
 }
