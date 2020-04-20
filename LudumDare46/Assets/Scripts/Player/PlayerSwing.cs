@@ -12,6 +12,7 @@ public class PlayerSwing : MonoBehaviour
     private float hitTimeHave;
     private Item currentItem;
     private int direction; // 1 for right -1 for left
+	private bool updatePaused = false;
 
     public GameObject toolRSpot;
     public GameObject toolLSpot;
@@ -28,6 +29,7 @@ public class PlayerSwing : MonoBehaviour
         filter.NoFilter();
         currentItem = Item.None;
         hitTimeHave = hitTimeNeeded;
+		updateToolRender();
     }
 
     // Update is called once per frame
@@ -51,7 +53,7 @@ public class PlayerSwing : MonoBehaviour
                     {
                         //Interact with the object and get the item from it
                         Item item = ic.interact(currentItem);
-                        if (item != Item.None) currentItem = item;
+                        if (item != Item.Current) currentItem = item;
                         updateToolRender();
                     }
                 }
@@ -66,13 +68,15 @@ public class PlayerSwing : MonoBehaviour
             updateToolRender();
         }
     }
-
+	
     IEnumerator swingTool()
     {
+		updatePaused = true;
         toolRenderer.flipY = true; //Swing it
 
         //wait a second to flip back
         yield return new WaitForSeconds(0.4f);
+		updatePaused = false;
         toolRenderer.flipY = false;
     }
 
@@ -89,19 +93,24 @@ public class PlayerSwing : MonoBehaviour
             tool.transform.position = toolLSpot.transform.position;
         }
 
-        switch(currentItem)
-        {
-            case Item.None:
-                toolRenderer.sprite = null;
-                break;
-            case Item.Tools:
-                toolRenderer.sprite = toolSprites[0];
-                break;
-            case Item.Mop:
-                toolRenderer.sprite = toolSprites[1];
-                break;
-            default:
-                break;
+		if (!updatePaused)
+		{
+			switch(currentItem)
+			{
+				case Item.None:
+					toolRenderer.sprite = null;
+					break;
+				case Item.Tools:
+					toolRenderer.sprite = toolSprites[0];
+					break;
+				case Item.Mop:
+					toolRenderer.sprite = toolSprites[1];
+					break;
+				case Item.Current:
+					break;
+				default:
+					break;
+			}
         }
     }
 }

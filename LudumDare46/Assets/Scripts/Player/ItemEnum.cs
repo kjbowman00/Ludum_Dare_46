@@ -2,4 +2,4 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public enum Item {None, Mop, Tools}
+public enum Item {None, Mop, Tools, Current}
