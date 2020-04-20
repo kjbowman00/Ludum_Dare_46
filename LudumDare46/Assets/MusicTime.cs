@@ -18,4 +18,8 @@ public class MusicTime : MonoBehaviour
     {
         music.Stop();
     }
+    public void playMusic()
+    {
+        music.Play();
+    }
 }

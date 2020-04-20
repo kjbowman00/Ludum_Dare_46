@@ -23,6 +23,7 @@ public class SceneChanger : MonoBehaviour
 
     public void LoadIntro()
     {
+        MusicTime.instance.stopMusic();
         loadingScreen.SetActive(true);
         scenesLoading.Add(SceneManager.UnloadSceneAsync(1)); //Get rid of main menu
         scenesLoading.Add(SceneManager.LoadSceneAsync(5, LoadSceneMode.Additive)); //Load baby room
@@ -32,6 +33,7 @@ public class SceneChanger : MonoBehaviour
 
     public void LoadGame()
     {
+        MusicTime.instance.playMusic();
         loadingScreen.SetActive(true);
         scenesLoading.Add(SceneManager.UnloadSceneAsync(5)); //Get rid of intro
         scenesLoading.Add(SceneManager.LoadSceneAsync(2, LoadSceneMode.Additive)); //Load baby room
