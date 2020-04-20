@@ -10,6 +10,7 @@ public class BossLose : MonoBehaviour
     public GameObject jumpPos2;
     private Vector3 basePos;
     public GameObject agSound;
+    private AudioSource agSoundA;
     public GameObject mySonSound;
     public GameObject loseTExt;
     private SpriteRenderer bossImage;
@@ -21,6 +22,7 @@ public class BossLose : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        agSoundA = agSound.GetComponent<AudioSource>();
         done = false;
         basePos = transform.position;
         bossImage = GetComponent<SpriteRenderer>();
@@ -58,6 +60,7 @@ public class BossLose : MonoBehaviour
                     //Turn red
                     if (!agSound.activeSelf) agSound.SetActive(true);
                     float percentage = timer / eventTimes[count];
+                    agSoundA.pitch = Mathf.Lerp(0.7f, 1, 1 - percentage);
                     bossImage.color = new Color(1, 1 - percentage, 1 - percentage);
                     transform.localScale = new Vector3(Mathf.Lerp(0.5f, 3, percentage), Mathf.Lerp(0.5f, 3, percentage), 1);
                     break;

@@ -21,10 +21,19 @@ public class SceneChanger : MonoBehaviour
         SceneManager.LoadSceneAsync(1, LoadSceneMode.Additive); // Load main menu
     }
 
-    public void LoadGame()
+    public void LoadIntro()
     {
         loadingScreen.SetActive(true);
         scenesLoading.Add(SceneManager.UnloadSceneAsync(1)); //Get rid of main menu
+        scenesLoading.Add(SceneManager.LoadSceneAsync(5, LoadSceneMode.Additive)); //Load baby room
+
+        StartCoroutine(GetSceneLoadProgress());
+    }
+
+    public void LoadGame()
+    {
+        loadingScreen.SetActive(true);
+        scenesLoading.Add(SceneManager.UnloadSceneAsync(5)); //Get rid of intro
         scenesLoading.Add(SceneManager.LoadSceneAsync(2, LoadSceneMode.Additive)); //Load baby room
 
         StartCoroutine(GetSceneLoadProgress());
