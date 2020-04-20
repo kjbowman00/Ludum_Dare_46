@@ -5,6 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class SceneChanger : MonoBehaviour
 {
+    public GameObject blackScreen;
     public float maxSizeLoadBar;
     public GameObject loadBar;
     public static SceneChanger instance;
@@ -39,5 +40,32 @@ public class SceneChanger : MonoBehaviour
         }
 
         loadingScreen.SetActive(false);
+        scenesLoading.Clear();
+    }
+
+    public void toMenu()
+    {
+        loadingScreen.SetActive(true);
+        scenesLoading.Add(SceneManager.UnloadSceneAsync(SceneManager.GetActiveScene()));
+        scenesLoading.Add(SceneManager.LoadSceneAsync(1, LoadSceneMode.Additive));
+
+        StartCoroutine(GetSceneLoadProgress());
+    }
+
+    public void loseGame()
+    {
+        blackScreen.SetActive(true);
+        SceneManager.UnloadSceneAsync(2);
+        SceneManager.LoadSceneAsync(3, LoadSceneMode.Additive);
+
+        StartCoroutine(loseGameWait());
+    }
+
+    private IEnumerator loseGameWait()
+    {
+        yield return new WaitForSeconds(2);
+
+        BossLose.begin = true;
+        blackScreen.SetActive(false);
     }
 }
