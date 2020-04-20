@@ -55,11 +55,9 @@ public class EventManager : MonoBehaviour
                 switch(i)
                 {
                     case 0:
-                        Debug.Log("Pipe Burst");
                         PipeBurst();
                         break;
                     case 1:
-                        Debug.Log("Laser has been fired");
                         float leftOrRight = Random.Range(0f, 1f);
 						if (leftOrRight < 0.5f)
 							LaserFire(10f, -75f, 2.5f, new Vector3(0.27f, 0.96f, 0f));
@@ -67,7 +65,6 @@ public class EventManager : MonoBehaviour
 							LaserFire(-190f, -115f, 2.5f, new Vector3(-0.3f, 0.96f, -0f));
                         break;
                     case 2:
-                        Debug.Log("Milk Spilt");
 						SpawnMilk();
                         break;
                     default:
@@ -92,20 +89,17 @@ public class EventManager : MonoBehaviour
 	{
 		if (PlaceMop != null)
 		{
-			Debug.Log("Replaced mop");
 			PlaceMop();
 		}
 	}
 	
 	public static void placeToolbox()
 	{
-		Debug.Log("Replaced toolbox");
 		PlaceToolbox();
 	}
 	
 	public static void getHit()
 	{
-		Debug.Log("Got hit... Loser.");
 		GetHit();
 	}
 

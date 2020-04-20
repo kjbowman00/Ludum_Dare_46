@@ -52,6 +52,22 @@ public class SceneChanger : MonoBehaviour
         StartCoroutine(GetSceneLoadProgress());
     }
 
+    public void winGame()
+    {
+        blackScreen.SetActive(true);
+        SceneManager.UnloadSceneAsync(2);
+        SceneManager.LoadSceneAsync(4, LoadSceneMode.Additive);
+
+        StartCoroutine(winGameWait());
+    }
+
+    private IEnumerator winGameWait()
+    {
+        yield return new WaitForSeconds(1);
+
+        blackScreen.SetActive(false);
+    }
+
     public void loseGame()
     {
         blackScreen.SetActive(true);

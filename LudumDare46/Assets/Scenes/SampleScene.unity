@@ -1251,8 +1251,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gameEndManager: {fileID: 123463036}
   pipeManager: {fileID: 659831649}
-  milkDrinkRate: 4
-  healthDrainRate: 1
+  milkDrinkRate: 15
+  healthDrainRate: 5
   healthBar: {fileID: 30106907}
   milkBar: {fileID: 896418195}
 --- !u!1 &105139641
@@ -1515,7 +1515,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   clockHand: {fileID: 826829451}
-  TOTAL_TIME_NEEDED: 30
+  TOTAL_TIME_NEEDED: 210
 --- !u!1 &138621326
 GameObject:
   m_ObjectHideFlags: 0
@@ -7679,8 +7679,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pump1: {fileID: 1419955974}
   pump2: {fileID: 2128599759}
-  MILK_FLOW_PER_PUMP: 3
-  brokenPipeLeakAmount: 2
+  MILK_FLOW_PER_PUMP: 15
+  brokenPipeLeakAmount: 10
 --- !u!4 &659831650
 Transform:
   m_ObjectHideFlags: 0
@@ -13431,7 +13431,6 @@ GameObject:
   m_Component:
   - component: {fileID: 826829452}
   - component: {fileID: 826829453}
-  - component: {fileID: 826829454}
   m_Layer: 0
   m_Name: ClockRod
   m_TagString: Untagged
@@ -13503,20 +13502,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &826829454
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 826829451}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c980456d676b0e44b84410454af4fe26, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  clockHand: {fileID: 826829451}
-  TOTAL_TIME_NEEDED: 30
 --- !u!1 &827953670
 GameObject:
   m_ObjectHideFlags: 0
