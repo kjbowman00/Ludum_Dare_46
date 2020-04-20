@@ -28,6 +28,10 @@ public class GameEndManager : MonoBehaviour
     //Lose the game
     public void outOfHealth()
     {
+        //Flash black screen
+        //Scene with everything but you can't move
+        //Just an animation at that poitn
+        //Boss comes in and smashes you from anger
     }
 
     public float getPercentageTime()
