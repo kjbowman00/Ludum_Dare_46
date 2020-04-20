@@ -56,7 +56,7 @@ public class PipeManager : MonoBehaviour
     {
         int numPumps = 0;
         numPumps += pump1.pumpStatus();
-        //numPumps += pump2.pumpStatus();
+        numPumps += pump2.pumpStatus();
         float milk = MILK_FLOW_PER_PUMP * numPumps;
         milk -= numBurstedPipes * brokenPipeLeakAmount;
         if (milk < 0) milk = 0;
