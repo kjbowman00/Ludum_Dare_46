@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Pump : Interactable
 {
-
+    private Animator animator;
     public float pumpDuration;
     public float randomness;
     public int pumpFixNeeded;
@@ -17,6 +17,7 @@ public class Pump : Interactable
     // Start is called before the first frame update
     void Start()
     {
+        animator = GetComponent<Animator>();
         pumpOn = true;
         timePassed = 0;
         timeNeeded = pumpDuration + Random.Range(0, randomness);
@@ -36,7 +37,7 @@ public class Pump : Interactable
                 timePassed = 0;
                 timeNeeded = pumpDuration + Random.Range(0, randomness);
                 pumpOn = false;
-                GetComponent<SpriteRenderer>().color = Color.red; //Temporary until we animate
+                animator.SetBool("PumpOn", false);
             }
         } 
         else
@@ -46,7 +47,7 @@ public class Pump : Interactable
                 //Pump is now fixed
                 pumpOn = true;
                 pumpFixPassed = 0;
-                GetComponent<SpriteRenderer>().color = Color.white; //Temporary until we animate
+                animator.SetBool("PumpOn", true);
             }
         }
     }
