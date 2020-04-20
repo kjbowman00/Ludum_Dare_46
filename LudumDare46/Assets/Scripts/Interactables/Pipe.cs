@@ -4,11 +4,13 @@ using UnityEngine;
 
 public class Pipe : Interactable
 {
+    private ParticleSystem particleSystem;
     private PipeManager pipeManager;
     private bool bursted;
     // Start is called before the first frame update
     void Start()
     {
+        particleSystem = GetComponent<ParticleSystem>();
         pipeManager = GetComponentInParent<PipeManager>();
     }
 
@@ -22,14 +24,14 @@ public class Pipe : Interactable
     {
         //Turn red right now to show that it's bursted
         bursted = true;
-        GetComponent<SpriteRenderer>().color = Color.red;
+        particleSystem.Play();
     }
 
     private void fixPipe()
     {
         bursted = false;
         pipeManager.repairedPipe();
-        GetComponent<SpriteRenderer>().color = Color.white;
+        particleSystem.Stop();
     }
 
     public bool isBurst()
@@ -39,7 +41,6 @@ public class Pipe : Interactable
 
     public override Item interact(Item playerItem)
     {
-        Debug.Log("Pipe interaction");
         if (playerItem == Item.Tools)
         {
             fixPipe();

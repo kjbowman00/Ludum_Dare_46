@@ -28,6 +28,5 @@ public class GameEndManager : MonoBehaviour
     //Lose the game
     public void outOfHealth()
     {
-
     }
 }
